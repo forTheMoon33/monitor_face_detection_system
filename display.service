@@ -1,0 +1,16 @@
+[Unit]
+Description=Display footage and control service
+After=network.target
+[Service]
+WorkingDirectory=/usr/bin/display
+Environment="FLASK_APP=display.py"
+Environment="PATH=/home/waterbottle/.venv/bin:/home/waterbottle/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/games:/usr/games"
+Environment="PYTHONPATH=/home/waterbottle/.venv/lib/python3.11/site-packages"
+
+ExecStart=/usr/bin/flask run --host=0.0.0.0
+TimeoutSec=3
+Restart=always
+Type=simple
+
+[Install]
+WantedBy=multi-user.target
