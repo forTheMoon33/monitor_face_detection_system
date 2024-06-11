@@ -20,6 +20,7 @@ display.service should be placed in /systemd/system and then enable the service.
 
 default is the set up file for nginx, which setup the proxy pass for the flask application routes.
 
+MQTT folder is the cyperboard c code.
 
 
 
